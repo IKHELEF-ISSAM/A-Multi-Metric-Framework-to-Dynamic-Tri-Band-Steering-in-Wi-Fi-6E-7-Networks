@@ -1,0 +1,162 @@
+{
+  "02:00:00:00:01:01": {
+    "device_type": "Smartphone",
+    "priority": "medium",
+    "bands": {
+      "2G": true,
+      "5G": true,
+      "6G": false
+    },
+    "preferred_band": "2G",
+    "weights": {
+      "clients": 0.1728,
+      "rssi": 0.3086,
+      "airtime": 0.1481,
+      "throughput": 0.247,
+      "txpower": 0.1235
+    },
+    "thresholds": {
+      "2G": {
+        "min_rssi": -65
+      },
+      "5G": {
+        "min_rssi": -60
+      },
+      "6G": {
+        "min_rssi": -55
+      }
+    },
+    "min_throughput_mbps": 20.0,
+    "max_airtime_percent": 80.0,
+    "switch_threshold": 1.0,
+    "cooldown": 360.0
+  },
+  "02:00:00:00:01:02": {
+    "device_type": "Laptop/Desktop",
+    "priority": "low",
+    "bands": {
+      "2G": true,
+      "5G": true,
+      "6G": true
+    },
+    "preferred_band": "6G",
+    "weights": {
+      "clients": 0.1111,
+      "rssi": 0.2444,
+      "airtime": 0.2222,
+      "throughput": 0.3112,
+      "txpower": 0.1111
+    },
+    "thresholds": {
+      "2G": {
+        "min_rssi": -75
+      },
+      "5G": {
+        "min_rssi": -51
+      },
+      "6G": {
+        "min_rssi": -18
+      }
+    },
+    "min_throughput_mbps": 113.0,
+    "max_airtime_percent": 25.0,
+    "switch_threshold": 1.0,
+    "cooldown": 5.0
+  },
+  "02:00:00:00:01:03": {
+    "device_type": "PC",
+    "priority": "low",
+    "bands": {
+      "2G": true,
+      "5G": true,
+      "6G": true
+    },
+    "preferred_band": "5G",
+    "weights": {
+      "clients": 0.1412,
+      "rssi": 0.3051,
+      "airtime": 0.113,
+      "throughput": 0.2995,
+      "txpower": 0.1412
+    },
+    "thresholds": {
+      "2G": {
+        "min_rssi": -65
+      },
+      "5G": {
+        "min_rssi": -60
+      },
+      "6G": {
+        "min_rssi": -55
+      }
+    },
+    "min_throughput_mbps": 30.0,
+    "max_airtime_percent": 80.0,
+    "switch_threshold": 70.0,
+    "cooldown": 360.0
+  },
+  "02:00:00:00:01:04": {
+    "device_type": "Unknown",
+    "priority": "medium",
+    "bands": {
+      "2G": true,
+      "5G": true,
+      "6G": true
+    },
+    "preferred_band": "2G",
+    "weights": {
+      "clients": 0.2121,
+      "rssi": 0.303,
+      "airtime": 0.1818,
+      "throughput": 0.1516,
+      "txpower": 0.1515
+    },
+    "thresholds": {
+      "2G": {
+        "min_rssi": -75
+      },
+      "5G": {
+        "min_rssi": -70
+      },
+      "6G": {
+        "min_rssi": -65
+      }
+    },
+    "min_throughput_mbps": 5.0,
+    "max_airtime_percent": 80.0,
+    "switch_threshold": 1.0,
+    "cooldown": 5.0
+  },
+  "02:00:00:00:01:05": {
+    "device_type": "IoT",
+    "priority": "critical",
+    "bands": {
+      "2G": true,
+      "5G": true,
+      "6G": true
+    },
+    "preferred_band": "5G",
+    "weights": {
+      "clients": 0.1453,
+      "rssi": 0.3721,
+      "airtime": 0.1453,
+      "throughput": 0.221,
+      "txpower": 0.1163
+    },
+    "thresholds": {
+      "2G": {
+        "min_rssi": -65
+      },
+      "5G": {
+        "min_rssi": -60
+      },
+      "6G": {
+        "min_rssi": -55
+      }
+    },
+    "min_throughput_mbps": 5.0,
+    "max_airtime_percent": 80.0,
+    "switch_threshold": 1.0,
+    "cooldown": 180.0
+  }
+}
