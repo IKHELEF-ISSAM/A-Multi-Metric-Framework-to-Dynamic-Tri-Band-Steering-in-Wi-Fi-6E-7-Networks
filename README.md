@@ -5,9 +5,6 @@ and 6 GHz radios of an OpenWrt access point. The Python controller communicates
 **directly with OpenWrt over SSH**. A React dashboard displays measurements,
 per-device rules, scores and steering diagnostics.
 
-**OpenWISP is not required.** The historical Python package name has been
-replaced with `wifi_steering` throughout the active backend and subprocess commands.
-
 ## What the project does
 
 - Collects radio and station information using `iw`, `hostapd_cli`, UCI and
@@ -141,10 +138,6 @@ The API has no user-authentication layer and includes control endpoints. The
 provided defaults are for local laboratory use. A public deployment requires
 an authenticated access layer and appropriate network access controls.
 
-Some template routes (such as team, calendar, contacts and geography) are
-retained from the dashboard template and contain demo data. They are not AP
-telemetry. The main experimental views are Steering, Configuration, RSSI,
-Throughput, Retransmissions and Scores.
 
 ## 5. Inspect decisions, then apply steering
 
@@ -166,7 +159,7 @@ The dashboard's Start action also requires `BPI_ALLOW_CHANGES=true` and starts
 the CLI with `--apply`. Do not run a second CLI steering loop while the API
 already manages one. Dry-run still reads the AP and writes local diagnostics.
 
-The controller enforces a minimum per-station cooldown of 60 seconds in its
+The controller enforces a minimum per-station cooldown of 180 seconds in its
 decision path; configured rules can request a longer interval (the example
 environment requests 180 seconds). Verify actual
 request and association timestamps when reporting experiment transitions.
@@ -208,8 +201,7 @@ AP firmware, channels, bandwidths, traffic-generator settings and experiment
 timestamps alongside your measurements. The example thresholds do not prove
 that an earlier recording used the same values.
 
-The original `sync-sessions` command remains available, but samples current
-associations rather than reconstructing historical session start/end times.
+
 
 ## Metric limitations
 
@@ -226,7 +218,7 @@ associations rather than reconstructing historical session start/end times.
   measurements of every band.
 - Controller scores and history gaps are not a substitute for an AP action log
   confirming that a client accepted a steering request.
-- Energy consumption is not measured by this implementation.
+
 
 ## Offline verification
 
@@ -260,17 +252,3 @@ The dashboard template's MIT license is preserved in `frontend/LICENSE`.
 See [third-party notices](THIRD_PARTY_NOTICES.md) for attribution and branding.
 No license was supplied for the original backend; the owner must choose one
 before granting redistribution rights for the complete project.
-
-The archive is prepared for a new GitHub repository. It contains no original
-Git history, dependency environments, measurement databases or live `.env`.
-Create a repository, then run from this folder, replacing the remote URL:
-
-```bash
-git init
-git add .
-git commit -m "Prepare OpenWrt Wi-Fi steering research prototype"
-git branch -M main
-git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
-git push -u origin main
-```
-# A-Multi-Metric-Framework-to-Dynamic-Tri-Band-Steering-in-Wi-Fi-6E-7-Networks
