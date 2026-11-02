@@ -46,22 +46,6 @@ identical in the supplied implementation. Explicit JSON rules avoid relying
 on an assumed common default. The preparation keeps those decision defaults
 unchanged; `.env.example` sets an explicit baseline for new runs.
 
-The controller's actual cooldown floor is `max(60.0, configured_cooldown)`.
-An original comment saying 180 seconds was inaccurate and has been corrected.
-The source example profiles can request 360 seconds. These differences matter
-when reproducing or describing a particular recording.
 
-## Metrics and interpretation
 
-The primary SSH client's `airtime_available=false` means utilization was not
-measured there. A fallback numeric zero must not be reported as real zero
-occupancy. Latency and loss are not directly obtained from its `iw` snapshot.
-Candidate scores may depend on estimates and fallbacks in existing code.
 
-Historical experiment charts/Excel and the paper's plotting scripts are not
-included in this repository; they were not present as source deliverables in
-the uploaded project ZIP. Regenerate measurements and exports on your own AP.
-
-Never infer that a configured rule was satisfied solely because an API returned
-a score. Compare accepted steering actions, band observations, and measured
-performance in a consistent time window.
